@@ -29,7 +29,7 @@ app.use(expressSession({
     store: new MemoryStore(),
 }));
 
-app.use(csrf());
+//app.use(csrf());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -43,6 +43,16 @@ app.use(function (req, res, next) {
 });
 
 app.use(require('./controller/routes.js'));
+
+
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const s3Route = require("./route/S3Route");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors());
+app.use("/file", s3Route);
+
 
 const PORT = process.env.PORT || 8000;
 
