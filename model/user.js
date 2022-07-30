@@ -17,10 +17,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    provider: {
-        type: String,
-        required: true,
-    }
+    token: { type: String }
 });
 
 module.exports = mongoose.model('user', userSchema);

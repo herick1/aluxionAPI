@@ -57,12 +57,8 @@ router.post('/signup', (req, res) => {
                             username: username,
                             email: email,
                             password: hash,
-                            provider: 'email',
                         }).save((err, data) => {
                             if (err) throw err;
-                            // login the user
-                            // use req.login
-                            // redirect , if you don't want to login
                             res.redirect('/login');
                         });
                     })
@@ -88,9 +84,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/profile', checkAuth, (req, res) => {
-    // adding a new parameter for checking verification
     res.render('profile', { username: req.user.username, verified : req.user.isVerified });
-
 });
 
 

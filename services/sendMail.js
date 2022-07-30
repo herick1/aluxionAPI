@@ -20,6 +20,17 @@ module.exports.sendResetEmail = async (email, token) => {
   });
 };
 
+module.exports.sendResetEmailApi = async (email, token) => {
+  await smtpTransport.sendMail({
+    from: process.env.MAIL_ACCOUNT,
+    to: email,
+    subject: "RESET YOUR PASSWORD",
+    text: `Paste on this token to reset your password ${token}`,
+    html: `<h3> Paste on this token to reset your password : ${token} </h3>`,
+  });
+};
+
+
 module.exports.sendVerifyEmail = async (email, token) => {
   // change first part to your domain
   var url = process.env.DOMAIN_NAME + "/user/verifyemail?token=" + token;

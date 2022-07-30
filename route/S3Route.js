@@ -2,8 +2,10 @@ const express = require("express");
 const s3FileController = require("../services/S3FileController");
 const router = express.Router();
 const request = require('request');
+const auth = require("../middleware/auth");
 
-router.post("/upload-single-image", (req, res) => {
+
+router.post("/upload",auth , (req, res) => {
   const upload = s3FileController.uploadSingleFile.single("image");
   upload(req, res, (err) => {
     if (err) {
@@ -13,7 +15,46 @@ router.post("/upload-single-image", (req, res) => {
   });
 });
 
-router.get("/all-images", (req, res) => {
+
+router.get("/download", auth, (req, res) => {
+  const http = require('http'); // or 'https' for https:// URLs
+  const fs = require('fs');
+
+  const file = fs.createWriteStream("file.jpg");
+  const request = http.get("http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg", function(response) {
+     response.pipe(file);
+
+     // after download completed close filestream
+     file.on("finish", () => {
+         file.close();
+         console.log("Download Completed");
+     });
+  });
+
+});
+
+router.post("/list-user-files", auth, (req, res) => {
+  const upload = s3FileController.uploadSingleFile.single("image");
+  upload(req, res, (err) => {
+    if (err) {
+      return res.json({ code: "file upload error", message: err.message });
+    }
+    return res.json({ resp: req.file });
+  });
+});
+
+
+router.post("/change-name", auth, (req, res) => {
+  const upload = s3FileController.uploadSingleFile.single("image");
+  upload(req, res, (err) => {
+    if (err) {
+      return res.json({ code: "file upload error", message: err.message });
+    }
+    return res.json({ resp: req.file });
+  });
+});
+
+router.get("/all-images-in-bucket", (req, res) => {
   s3FileController
     .getAllFiles()
     .catch((err) => {
@@ -24,7 +65,7 @@ router.get("/all-images", (req, res) => {
     });
 });
 
-router.delete("/delete-single-image", (req, res) => {
+router.delete("/delete-single-image", auth, (req, res) => {
   console.log(req.query)
   s3FileController
     .deleteSingleFile(req.query.key)
@@ -36,7 +77,7 @@ router.delete("/delete-single-image", (req, res) => {
     });
 });
 
-router.delete("/delete-multiple-images", (req, res) => {
+router.delete("/delete-multiple-images", auth, (req, res) => {
   s3FileController
     .deleteMultipleFiles(req.body)
     .catch((err) => {
@@ -50,7 +91,7 @@ router.delete("/delete-multiple-images", (req, res) => {
 
 
 
-router.post("/upload-single-image-from-url", async (req, res) => {
+router.post("/upload-single-image-from-url",auth, async (req, res) => {
   var options = {
       uri: req.body.url,
       encoding: null

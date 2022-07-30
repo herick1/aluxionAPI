@@ -2,11 +2,12 @@ const express = require("express");
 const router = express.Router();
 const request = require('request');
 const fetch = require('node-fetch')
+const auth = require("../middleware/auth");
 
   const domain = "https://api.unsplash.com"
   const endpoint = "/search/photos"
 
-router.get("/all-images", async (req, res) => {
+router.get("/all-images", auth, async (req, res) => {
 
   var search_parameter = req.query.search;
   var url = domain + endpoint +"?query=" + search_parameter + "&client_id=" + process.env.UNSPLASH_ACCESS_KEY ;

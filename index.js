@@ -9,6 +9,7 @@ const flash = require('connect-flash');
 const dotenv = require('dotenv').config();
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const accountapi = require("./route/accountAPIRoute");
 const s3Route = require("./route/S3Route");
 const unsplashapi = require("./route/unsplashRoute");
 
@@ -53,6 +54,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/file", s3Route);
 app.use("/unsplash", unsplashapi);
+
+app.use("/account", accountapi);
 
 const PORT = process.env.PORT || 8000;
 
