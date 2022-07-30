@@ -14,7 +14,5 @@ https://aluxionproject.herokuapp.com/
 TODOS:
 
 Realizar documentacion de la parte de la autenticacion
-arreglar navbar para las vistas
-montar y probar en heroku (colocar variables de entorno)
 
-Tranzabilidad tabla
+montar y probar en heroku (colocar variables de entorno)

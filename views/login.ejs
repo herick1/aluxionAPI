@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  <%- include('../views/partials/navbar-login'); %>
+  <%- include('../views/partials/navbar'); %>
 
     <div class="container">
       <h1 class="text-center p-3">Login Here</h1>
@@ -41,7 +41,6 @@
           <% } %>
 
         <form action="/login" , method="POST">
-          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <div class="mb-3">
             <label for="username">Enter Your Email</label>
             <input

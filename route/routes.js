@@ -3,7 +3,7 @@ const router = express.Router();
 const user = require('../model/user');
 const bcryptjs = require('bcryptjs');
 const passport = require('passport');
-require('./passportLocal')(passport);
+require('../services/passportLocal')(passport);
 const userRoutes = require('./accountRoutes');
 
 function checkAuth(req, res, next) {
@@ -18,18 +18,18 @@ function checkAuth(req, res, next) {
 
 router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
-        res.render("index", { logged: true });
+        res.render("index", { logged: true, page: "index" });
     } else {
-        res.render("index", { logged: false });
+        res.render("index", { logged: false, page: "index" });
     }
 });
 
 router.get('/login', (req, res) => {
-    res.render("login", { csrfToken: req.csrfToken() });
+    res.render("login", {  logged: false, page: "login"  });
 });
 
 router.get('/signup', (req, res) => {
-    res.render("signup", { csrfToken: req.csrfToken() });
+    res.render("signup", { logged: false, page: "signup"  });
 });
 
 router.post('/signup', (req, res) => {
@@ -37,18 +37,14 @@ router.post('/signup', (req, res) => {
     const { email, username, password, confirmpassword } = req.body;
     // check if the are empty 
     if (!email || !username || !password || !confirmpassword) {
-        res.render("signup", { err: "All Fields Required !", csrfToken: req.csrfToken() });
+        res.render("signup", { err: "All Fields Required !" });
     } else if (password != confirmpassword) {
-        res.render("signup", { err: "Password Don't Match !", csrfToken: req.csrfToken() });
+        res.render("signup", { err: "Password Don't Match !"});
     } else {
-
-        // validate email and username and password 
-        // skipping validation
-        // check if a user exists
         user.findOne({ $or: [{ email: email }, { username: username }] }, function (err, data) {
             if (err) throw err;
             if (data) {
-                res.render("signup", { err: "User Exists, Try Logging In !", csrfToken: req.csrfToken() });
+                res.render("signup", { err: "User Exists, Try Logging In !" });
             } else {
                 // generate a salt
                 bcryptjs.genSalt(12, (err, salt) => {

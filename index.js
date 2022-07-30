@@ -10,7 +10,7 @@ const dotenv = require('dotenv').config();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const s3Route = require("./route/S3Route");
-const unsplashapi = require("./route/unsplashAPI");
+const unsplashapi = require("./route/unsplashRoute");
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.set('views', __dirname + '/views',);
 
 app.use(express.urlencoded({ extended: true }));
 
-const mongoURI = require('./config/monkoKEY');
+const mongoURI = process.env.MONGODB_URI;
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true, },).then(() => console.log("Connected !"),);
 
 app.use(cookieParser('random'));
@@ -46,8 +46,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(require('./controller/routes.js'));
-
+app.use(require('./route/routes.js'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
