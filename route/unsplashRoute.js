@@ -4,8 +4,8 @@ const request = require('request');
 const fetch = require('node-fetch')
 const auth = require("../middleware/auth");
 
-  const domain = "https://api.unsplash.com"
-  const endpoint = "/search/photos"
+const domain = "https://api.unsplash.com"
+const endpoint = "/search/photos"
 
 router.get("/all-images", auth, async (req, res) => {
 

@@ -3,33 +3,50 @@ const s3FileController = require("../services/S3FileController");
 const router = express.Router();
 const request = require('request');
 const auth = require("../middleware/auth");
-
+const Files = require('../model/files');
+const http = require('https'); // or 'https' for https:// URLs
+const fs = require('fs');
 
 router.post("/upload",auth , (req, res) => {
+
   const upload = s3FileController.uploadSingleFile.single("image");
-  upload(req, res, (err) => {
+  const email = req.user.email
+  upload(req, res, async (err) => {
     if (err) {
       return res.json({ code: "file upload error", message: err.message });
     }
-    return res.json({ resp: req.file });
+
+    var files =await Files.findOne({ $and: [{ email: email }, { originalname: req.file.originalname }] });
+
+
+    if(files == null){
+      files = await Files.create({
+        email: email,
+        fieldname: req.file.fieldname,
+        originalname: req.file.originalname,
+        location: req.file.location,
+        key: req.file.key
+      });
+    }
+    return res.json({ resp: files });
   });
 });
 
 
-router.get("/download", auth, (req, res) => {
-  const http = require('http'); // or 'https' for https:// URLs
-  const fs = require('fs');
-
-  const file = fs.createWriteStream("file.jpg");
-  const request = http.get("http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg", function(response) {
-     response.pipe(file);
-
-     // after download completed close filestream
-     file.on("finish", () => {
-         file.close();
-         console.log("Download Completed");
-     });
+router.get("/download", auth, async (req, res) => {
+  const name = req.query.file
+  const email = req.user.email
+  var files = await Files.findOne({ $and: [{ email: email }, { originalname: name }] });
+  console.log(files)
+  if(files == null){
+    return res.status(400).send("No existe el archivo");
+  }
+  
+  const externalRequest = http.get(files.location, (externalRes) => {
+    res.setHeader('Content-Disposition', 'attachment; filename="'+ name+'"');
+    externalRes.pipe(res);
   });
+  return externalRequest.end();
 
 });
 

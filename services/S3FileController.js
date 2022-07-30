@@ -1,6 +1,7 @@
 const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
+const User = require('../model/user');
 
 aws.config.update({
   secretAccessKey: process.env.Secret_AWS,
@@ -37,17 +38,6 @@ const deleteMultipleFiles = async (Objects) => {
 };
 
 const uploadSingleFile = multer({
-  fileFilter: (req, file, cb) => {
-    if (
-      file.originalname.includes(".jpeg") ||
-      file.originalname.includes(".jpg") ||
-      file.originalname.includes(".png")
-    ) {
-      cb(null, true);
-    } else {
-      cb(new Error("Invalid Mime Type, only JPG, JEPG and PNG", false));
-    }
-  },
   limits: { files: 1, fileSize: 1024 * 1024 },
   storage: multerS3({
     s3,
@@ -56,8 +46,9 @@ const uploadSingleFile = multer({
     metadata: (req, file, cb) => {
       cb(null, { fieldName: "file_metadata" });
     },
-    key: (req, file, cb) => {
-      cb(null, Date.now().toString() + file.originalname);
+    key: async (req, file, cb) => {
+      var user = await User.findOne({ email : req.user.email });
+      cb(null, user._id + file.originalname);
     },
   }),
 });
