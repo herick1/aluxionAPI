@@ -7,6 +7,10 @@ const MemoryStore = require('memorystore')(expressSession)
 const passport = require('passport');
 const flash = require('connect-flash');
 const dotenv = require('dotenv').config();
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const s3Route = require("./route/S3Route");
+const unsplashapi = require("./route/unsplashAPI");
 
 const app = express();
 
@@ -45,14 +49,11 @@ app.use(function (req, res, next) {
 app.use(require('./controller/routes.js'));
 
 
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const s3Route = require("./route/S3Route");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/file", s3Route);
-
+app.use("/unsplash", unsplashapi);
 
 const PORT = process.env.PORT || 8000;
 

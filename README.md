@@ -16,3 +16,5 @@ TODOS:
 Realizar documentacion de la parte de la autenticacion
 arreglar navbar para las vistas
 montar y probar en heroku (colocar variables de entorno)
+
+Tranzabilidad tabla

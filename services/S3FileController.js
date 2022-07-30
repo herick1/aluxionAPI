@@ -1,17 +1,15 @@
 const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
-// const config = require("./config.json");
-const config = require("./sampleConfig.json");
 
 aws.config.update({
-  secretAccessKey: config.secretAccessKey,
-  accessKeyId: config.accessKeyId,
-  region: config.region,
+  secretAccessKey: process.env.Secret_AWS,
+  accessKeyId:  process.env.Key_AWS,
+  region: process.env.region
 });
 
 const s3 = new aws.S3();
-const Bucket = "aluxion-testing"; // your bucket name here
+const Bucket = process.env.Bucket_AWS;
 
 const getAllFiles = async () => {
   try {
