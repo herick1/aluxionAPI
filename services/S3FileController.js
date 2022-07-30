@@ -64,9 +64,26 @@ const uploadSingleFile = multer({
   }),
 });
 
+
+const uploadSingleFileByurl = async (name, Objects) => {
+
+  try {
+      return await s3.upload({
+                Body: Objects,
+                Key: name,
+                Bucket: Bucket
+            }).promise();
+  } catch (err) {
+    console.log(err)
+    return err;
+  }
+};
+
+
 module.exports = {
   uploadSingleFile,
   getAllFiles,
   deleteSingleFile,
   deleteMultipleFiles,
+  uploadSingleFileByurl
 };

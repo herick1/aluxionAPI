@@ -1,6 +1,7 @@
 const express = require("express");
 const s3FileController = require("../services/S3FileController");
 const router = express.Router();
+const request = require('request');
 
 router.post("/upload-single-image", (req, res) => {
   const upload = s3FileController.uploadSingleFile.single("image");
@@ -44,6 +45,35 @@ router.delete("/delete-multiple-images", (req, res) => {
     .then((data) => {
       res.status(200).json({ message: "success", data });
     });
+});
+
+
+
+
+router.post("/upload-single-image-from-url", async (req, res) => {
+  var options = {
+      uri: req.body.url,
+      encoding: null
+  };
+  try {
+    await request(options, function(error, response, body) {
+      if (error || response.statusCode !== 200) { 
+          console.log("failed to get image");
+      } else {
+        
+        s3FileController
+        .uploadSingleFileByurl(req.body.name, body)
+        .catch((err) => {
+          res.status(400).json({ error: err });
+        })
+        .then((data) => {
+          res.status(200).json({ message: "success", data });
+        });
+      } 
+    })  
+  } catch (err) {
+    return res.status(400).json({ error: err });
+  }
 });
 
 module.exports = router;
