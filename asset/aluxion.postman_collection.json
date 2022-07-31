@@ -1,0 +1,415 @@
+{
+	"id": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+	"name": "aluxion",
+	"description": "",
+	"order": [
+		"cf40ad1a-51c7-6c69-53f4-609d31fae1ce",
+		"90ce848f-351c-116c-c0da-e400cdf6bbf9",
+		"73f8a0ab-54b7-05bb-0fa4-905440ac9cc4",
+		"c4213865-b88b-c12c-cc15-dcb8b39b19e7",
+		"a6b4be1b-adea-901a-8e4f-8ad509b83f0b",
+		"122c0f92-93ab-7c02-4462-744835095c33",
+		"b3c3ab52-b3ee-7c9e-7fa7-ec4a3812f0cf",
+		"da1fe67a-a6c6-7405-94fa-b1445d0c6f14",
+		"d135aa07-5db8-078c-6039-12a82ce2d7e6",
+		"5eca5191-3e4c-a225-41d0-6df5bfcbcd11",
+		"8e048807-6e63-ba12-068e-2aa4a35cf5e8"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1659215282921,
+	"owner": "3249764",
+	"public": false,
+	"requests": [
+		{
+			"id": "122c0f92-93ab-7c02-4462-744835095c33",
+			"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/file/all-images-in-bucket",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1659226136628,
+			"name": "localhost:8000/file/all-images-in-bucket",
+			"description": "",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"responses": []
+		},
+		{
+			"id": "5eca5191-3e4c-a225-41d0-6df5bfcbcd11",
+			"headers": "Content-Type: application/json\nx-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/file/upload-single-image-from-url",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8000/file/upload-single-image-from-url",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659225949236,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"url\": \"https://img.icons8.com/color/344/html-5--v1.png\",\n\t\"name\": \"imagenFromurl2.png\"\n\t\n}"
+		},
+		{
+			"id": "73f8a0ab-54b7-05bb-0fa4-905440ac9cc4",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/account/forgot-password",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8000/account/forgot-password",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659218629941,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"email\": \"herick200@gmail.com\"\n}"
+		},
+		{
+			"id": "8e048807-6e63-ba12-068e-2aa4a35cf5e8",
+			"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/unsplash/all-images?search=cofee",
+			"queryParams": [
+				{
+					"key": "search",
+					"value": "cofee",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"data": null,
+			"dataMode": "params",
+			"name": "localhost:8000/unsplash/all-images?search=cofee",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659227370011,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "90ce848f-351c-116c-c0da-e400cdf6bbf9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "localhost:8000/account/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1659218546432,
+			"name": "localhost:8000/account/login",
+			"description": "",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"herick207@gmail.com\", \n\t\"password\": \"herick200\"\n}"
+		},
+		{
+			"id": "a6b4be1b-adea-901a-8e4f-8ad509b83f0b",
+			"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/file/upload",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "image",
+					"value": "minero.png",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1659223073652,
+			"name": "localhost:8000/file/upload",
+			"description": "",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"responses": []
+		},
+		{
+			"id": "b3c3ab52-b3ee-7c9e-7fa7-ec4a3812f0cf",
+			"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/file/download?file=minero1.png",
+			"queryParams": [
+				{
+					"key": "file",
+					"value": "minero1.png",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"data": null,
+			"dataMode": "params",
+			"name": "localhost:8000/file/download?file=minero1.png",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659223578792,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "c4213865-b88b-c12c-cc15-dcb8b39b19e7",
+			"headers": "Content-Type: application/json\nx-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/account/reset-password",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1659218174853,
+			"name": "localhost:8000/account/reset-password",
+			"description": "",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "b9e054f0-7889-780c-a50d-8b82159dab8c",
+			"rawModeData": "{\n\t\"email\": \"herick200@gmail.com\", \n\t\"password\": \"herick200\", \n\t\"password2\": \"herick200\"\n}"
+		},
+		{
+			"id": "cf40ad1a-51c7-6c69-53f4-609d31fae1ce",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "localhost:8000/account/register",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8000/account/register",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659218578022,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"username\": \"herick2\",\n\t\"email\": \"herick207@gmail.com\", \n\t\"password\": \"herick200\"\n}"
+		},
+		{
+			"id": "d135aa07-5db8-078c-6039-12a82ce2d7e6",
+			"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNWFhNDVjODllMzgxMTkwMDliNzllIiwiZW1haWwiOiJoZXJpY2syMDdAZ21haWwuY29tIiwiaWF0IjoxNjU5MjI0NjE4LCJleHAiOjE2NTkyMzE4MTh9.15A1DF6TOAy5ZKZu6A9yAHkI6jqFBp0Ct1eKwKc5oBc",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/file/change-name",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8000/account/change-name",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659225593881,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"oldname\": \"minero.png\",\n\t\"newname\": \"newname221.png\"\n}"
+		},
+		{
+			"id": "da1fe67a-a6c6-7405-94fa-b1445d0c6f14",
+			"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI\n",
+			"headerData": [
+				{
+					"key": "x-access-token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNTI4ZWYxYTQ0N2EyODk4N2EzNGY2IiwiZW1haWwiOiJoZXJpY2syMDBAZ21haWwuY29tIiwiaWF0IjoxNjU5MjE3Mzg0LCJleHAiOjE2NTkyMjQ1ODR9.lhy__Bd2KXAtJduj5WAdM8EnRBfaoFDHEbDOEO09nkI",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/file/list-user-files",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
+			"data": null,
+			"dataMode": "params",
+			"name": "localhost:8000/file/list-user-files",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659223747128,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

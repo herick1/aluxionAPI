@@ -11,13 +11,7 @@ npm start
 # El proyecto es acessible directamente a traves de heroku con el enalce:
 https://aluxionproject.herokuapp.com/
 
-# TODOS:
-
-Realizar documentacion de la parte de la autenticacion
-
-montar y probar en heroku (colocar variables de entorno)
-
-token de usuario para las peticiones 
-
 
 # ENDPOINTS
+
+ ![endpoints](https://github.com/herick1/aluxionAPI/blob/develop/asset/aluxion.postman_collection.json)
