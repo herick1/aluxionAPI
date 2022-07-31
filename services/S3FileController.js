@@ -54,12 +54,13 @@ const uploadSingleFile = multer({
 });
 
 
-const uploadSingleFileByurl = async (name, Objects) => {
+const uploadSingleFileByurl = async (req, name, Objects) => {
 
+      var user = await User.findOne({ email : req.user.email });
   try {
       return await s3.upload({
                 Body: Objects,
-                Key: name,
+                Key:  user._id + name,
                 Bucket: Bucket
             }).promise();
   } catch (err) {

@@ -41,7 +41,7 @@ router.get("/download", auth, async (req, res) => {
   if(files == null){
     return res.status(400).send("No existe el archivo");
   }
-  
+
   const externalRequest = http.get(files.location, (externalRes) => {
     res.setHeader('Content-Disposition', 'attachment; filename="'+ name+'"');
     externalRes.pipe(res);
@@ -50,28 +50,36 @@ router.get("/download", auth, async (req, res) => {
 
 });
 
-router.post("/list-user-files", auth, (req, res) => {
-  const upload = s3FileController.uploadSingleFile.single("image");
-  upload(req, res, (err) => {
-    if (err) {
-      return res.json({ code: "file upload error", message: err.message });
-    }
-    return res.json({ resp: req.file });
-  });
+router.get("/list-user-files", auth, async (req, res) => {
+  const email = req.user.email
+  var files =await Files.find({ email: email  });
+
+  if(files == null){
+    return res.send("no existen archivos");
+  }
+  return res.json({ resp: files });
 });
 
 
-router.post("/change-name", auth, (req, res) => {
-  const upload = s3FileController.uploadSingleFile.single("image");
-  upload(req, res, (err) => {
-    if (err) {
-      return res.json({ code: "file upload error", message: err.message });
-    }
-    return res.json({ resp: req.file });
-  });
+router.post("/change-name", auth, async (req, res) => {
+
+  const name = req.body.oldname
+  const newname = req.body.newname
+  const email = req.user.email
+   
+  var files =await Files.findOne({ $and: [{ email: email }, { originalname: name }] });
+
+  if(files == null){
+    return res.send("no existen archivos");
+  }
+
+  files.originalname= newname;
+   
+  return res.json({ resp: files });
+
 });
 
-router.get("/all-images-in-bucket", (req, res) => {
+router.get("/all-images-in-bucket", auth, (req, res) => {
   s3FileController
     .getAllFiles()
     .catch((err) => {
@@ -113,6 +121,8 @@ router.post("/upload-single-image-from-url",auth, async (req, res) => {
       uri: req.body.url,
       encoding: null
   };
+  const email = req.user.email
+  
   try {
     await request(options, function(error, response, body) {
       if (error || response.statusCode !== 200) { 
@@ -120,11 +130,23 @@ router.post("/upload-single-image-from-url",auth, async (req, res) => {
       } else {
         
         s3FileController
-        .uploadSingleFileByurl(req.body.name, body)
+        .uploadSingleFileByurl(req, req.body.name, body)
         .catch((err) => {
           res.status(400).json({ error: err });
         })
-        .then((data) => {
+        .then( async (data) => {
+           var files =await Files.findOne({ $and: [{ email: email }, { originalname: req.body.name }] });
+
+            if(files == null){
+              files = await Files.create({
+                email: email,
+                fieldname: req.body.name,
+                originalname: req.body.name,
+                location: data.location,
+                key: data.key
+              });
+            }
+
           res.status(200).json({ message: "success", data });
         });
       } 
