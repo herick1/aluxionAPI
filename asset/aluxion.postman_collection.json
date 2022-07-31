@@ -32,7 +32,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/file/all-images-in-bucket",
+			"url": "https://aluxionproject.herokuapp.com/file/all-images-in-bucket",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -44,7 +44,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1659226136628,
-			"name": "localhost:8000/file/all-images-in-bucket",
+			"name": "https://aluxionproject.herokuapp.com/file/all-images-in-bucket",
 			"description": "",
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"responses": []
@@ -66,7 +66,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/file/upload-single-image-from-url",
+			"url": "https://aluxionproject.herokuapp.com/file/upload-single-image-from-url",
 			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -75,7 +75,7 @@
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"data": [],
 			"dataMode": "raw",
-			"name": "localhost:8000/file/upload-single-image-from-url",
+			"name": "https://aluxionproject.herokuapp.com/file/upload-single-image-from-url",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1659225949236,
@@ -97,7 +97,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/account/forgot-password",
+			"url": "https://aluxionproject.herokuapp.com/account/forgot-password",
 			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -106,7 +106,7 @@
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"data": [],
 			"dataMode": "raw",
-			"name": "localhost:8000/account/forgot-password",
+			"name": "https://aluxionproject.herokuapp.com/account/forgot-password",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1659218629941,
@@ -128,7 +128,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/unsplash/all-images?search=cofee",
+			"url": "https://aluxionproject.herokuapp.com/unsplash/all-images?search=cofee",
 			"queryParams": [
 				{
 					"key": "search",
@@ -145,7 +145,7 @@
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"data": null,
 			"dataMode": "params",
-			"name": "localhost:8000/unsplash/all-images?search=cofee",
+			"name": "https://aluxionproject.herokuapp.com/unsplash/all-images?search=cofee",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1659227370011,
@@ -172,7 +172,7 @@
 					"enabled": false
 				}
 			],
-			"url": "localhost:8000/account/login",
+			"url": "https://aluxionproject.herokuapp.com/account/login",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -184,7 +184,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1659218546432,
-			"name": "localhost:8000/account/login",
+			"name": "https://aluxionproject.herokuapp.com/account/login",
 			"description": "",
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"responses": [],
@@ -201,7 +201,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/file/upload",
+			"url": "https://aluxionproject.herokuapp.com/file/upload",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -221,7 +221,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1659223073652,
-			"name": "localhost:8000/file/upload",
+			"name": "https://aluxionproject.herokuapp.com/file/upload",
 			"description": "",
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"responses": []
@@ -237,7 +237,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/file/download?file=minero1.png",
+			"url": "https://aluxionproject.herokuapp.com/file/download?file=minero1.png",
 			"queryParams": [
 				{
 					"key": "file",
@@ -254,7 +254,7 @@
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"data": null,
 			"dataMode": "params",
-			"name": "localhost:8000/file/download?file=minero1.png",
+			"name": "https://aluxionproject.herokuapp.com/file/download?file=minero1.png",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1659223578792,
@@ -281,7 +281,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/account/reset-password",
+			"url": "https://aluxionproject.herokuapp.com/account/reset-password",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -293,7 +293,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1659218174853,
-			"name": "localhost:8000/account/reset-password",
+			"name": "https://aluxionproject.herokuapp.com/account/reset-password",
 			"description": "",
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"responses": [],
@@ -318,7 +318,7 @@
 					"enabled": false
 				}
 			],
-			"url": "localhost:8000/account/register",
+			"url": "https://aluxionproject.herokuapp.com/account/register",
 			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -327,7 +327,7 @@
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"data": [],
 			"dataMode": "raw",
-			"name": "localhost:8000/account/register",
+			"name": "https://aluxionproject.herokuapp.com/account/register",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1659218578022,
@@ -361,7 +361,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/file/change-name",
+			"url": "https://aluxionproject.herokuapp.com/file/change-name",
 			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -370,7 +370,7 @@
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"data": [],
 			"dataMode": "raw",
-			"name": "localhost:8000/account/change-name",
+			"name": "https://aluxionproject.herokuapp.com/account/change-name",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1659225593881,
@@ -392,7 +392,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8000/file/list-user-files",
+			"url": "https://aluxionproject.herokuapp.com/file/list-user-files",
 			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -401,7 +401,7 @@
 			"collectionId": "d28bc7f7-88e2-592e-08b1-dc742df17966",
 			"data": null,
 			"dataMode": "params",
-			"name": "localhost:8000/file/list-user-files",
+			"name": "https://aluxionproject.herokuapp.com/file/list-user-files",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1659223747128,
